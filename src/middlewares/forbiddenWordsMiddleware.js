@@ -12,7 +12,7 @@ export function forbiddenWordsMiddleware({ dispatch }) {
         );
 
         if (found.length) {
-          return dispatch(showAlert("You are a spamer"));
+          return dispatch(showAlert("You are a spamer."));
         }
       }
 

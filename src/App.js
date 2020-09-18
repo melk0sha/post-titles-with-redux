@@ -3,7 +3,7 @@ import PostForm from "./components/PostForm";
 import Posts from "./components/Posts";
 import FetchedPosts from "./components/FetchedPosts";
 
-function App() {
+const App = () => {
   return (
     <div className="container pt-5">
       <div className="row">
@@ -27,6 +27,6 @@ function App() {
       </div>
     </div>
   );
-}
+};
 
 export default App;

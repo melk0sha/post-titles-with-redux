@@ -13,15 +13,15 @@ export function showThunkLoader() {
   };
 }
 
-export function showSagaLoader() {
-  return {
-    type: SHOW_SAGA_LOADER,
-  };
-}
-
 export function hideThunkLoader() {
   return {
     type: HIDE_THUNK_LOADER,
+  };
+}
+
+export function showSagaLoader() {
+  return {
+    type: SHOW_SAGA_LOADER,
   };
 }
 
