@@ -1,9 +1,15 @@
-import React from "react";
+import React, { Component } from "react";
 import { connect } from "react-redux";
 import { createPost, showAlert } from "../actions";
 import { Alert } from "./Alert";
 
-class PostForm extends React.Component {
+/**
+ * Using connect function from 'react-redux' with class component to work with Redux
+ *
+ * Combination of Redux store and React state
+ */
+
+class PostForm extends Component {
   state = {
     title: "",
   };
