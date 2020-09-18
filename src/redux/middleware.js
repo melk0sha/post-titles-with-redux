@@ -1,5 +1,5 @@
-import { showAlert } from "./actions";
-import { CREATE_POST } from "./types";
+import { showAlert } from "../actions";
+import { CREATE_POST } from "../constants";
 
 const forbiddenWords = ["fuck", "spam", "php"];
 

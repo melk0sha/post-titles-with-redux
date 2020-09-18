@@ -1,6 +1,6 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchPosts } from "../redux/actions";
+import { fetchSagaPosts } from "../actions";
 import { Loader } from "./Loader";
 import Post from "./Post";
 
@@ -17,11 +17,11 @@ export default () => {
     return (
       <button
         className="btn btn-primary"
-        onClick={() => dispatch(fetchPosts())}
+        onClick={() => dispatch(fetchSagaPosts())}
       >
         Load a post
       </button>
     );
   }
-  return posts.map((post) => <Post post={post} key={post} />);
+  return posts.map((post) => <Post post={post} key={post.id} />);
 };

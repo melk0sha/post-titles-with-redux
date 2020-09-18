@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-import { createPost, showAlert } from "../redux/actions";
+import { createPost, showAlert } from "../actions";
 import { Alert } from "./Alert";
 
 class PostForm extends React.Component {
@@ -39,7 +39,9 @@ class PostForm extends React.Component {
       <form onSubmit={this.submitHandler}>
         {this.props.alert && <Alert text={this.props.alert} />}
         <div className="form-group">
-          <label htmlFor="title">Post title</label>
+          <label className="h3" htmlFor="title">
+            Post title for Sync Posts
+          </label>
           <input
             type="text"
             className="form-control"
