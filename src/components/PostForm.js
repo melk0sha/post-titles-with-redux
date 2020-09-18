@@ -18,9 +18,10 @@ class PostForm extends Component {
     event.preventDefault();
 
     const { title } = this.state;
+    const { createPost, showAlert } = this.props;
 
     if (!title.trim()) {
-      return this.props.showAlert("Post title cannot be empty");
+      return showAlert("Post title cannot be empty");
     }
 
     const newPost = {
@@ -28,12 +29,13 @@ class PostForm extends Component {
       id: Date.now().toString(),
     };
 
-    this.props.createPost(newPost);
+    createPost(newPost);
     this.setState({ title: "" });
   };
 
   changeInputHandler = (event) => {
     event.persist();
+    console.log(this.state.title);
     this.setState((prev) => ({
       ...prev,
       [event.target.name]: event.target.value,
@@ -41,9 +43,13 @@ class PostForm extends Component {
   };
 
   render() {
+    const { submitHandler, changeInputHandler } = this;
+    const { alert } = this.props;
+    const { title } = this.state;
+
     return (
-      <form onSubmit={this.submitHandler}>
-        {this.props.alert && <Alert text={this.props.alert} />}
+      <form onSubmit={submitHandler}>
+        {alert && <Alert text={alert} />}
         <div className="form-group">
           <label className="h3" htmlFor="title">
             Post title for Sync Posts
@@ -52,9 +58,9 @@ class PostForm extends Component {
             type="text"
             className="form-control"
             id="title"
-            value={this.state.title}
+            value={title}
             name="title"
-            onChange={this.changeInputHandler}
+            onChange={changeInputHandler}
           />
         </div>
         <button className="btn btn-success" type="submit">

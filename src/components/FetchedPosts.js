@@ -19,7 +19,7 @@ const FetchedPosts = ({ type }) => {
     return <Loader />;
   }
 
-  const onClickHandler = () => {
+  const buttonClickHandler = () => {
     const fetchPosts = () => {
       if (isSaga) {
         return fetchSagaPosts();
@@ -33,7 +33,7 @@ const FetchedPosts = ({ type }) => {
 
   if (!posts.length) {
     return (
-      <button className="btn btn-primary" onClick={onClickHandler}>
+      <button className="btn btn-primary" onClick={buttonClickHandler}>
         Load a post
       </button>
     );
