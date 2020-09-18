@@ -2,7 +2,7 @@ import { takeEvery, put, call, delay } from "redux-saga/effects";
 import { FETCH_SAGA_POSTS, REQUEST_POSTS } from "../constants";
 import { hideSagaLoader, showAlert, showSagaLoader } from "../actions";
 
-const fakeDataUrl = "https://jsonplsaceholder.typicode.com/posts?_limit=4";
+const fakeDataUrl = "https://jsonplaceholder.typicode.com/posts?_limit=4";
 
 export function* sagaWatcher() {
   yield takeEvery(REQUEST_POSTS, sagaWorker);
