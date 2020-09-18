@@ -1,8 +1,7 @@
 import React from "react";
 import PostForm from "./components/PostForm";
 import Posts from "./components/Posts";
-import FetchedSagaPosts from "./components/FetchedSagaPosts";
-import FetchedThunkPosts from "./components/FetchedThunkPosts";
+import FetchedPosts from "./components/FetchedPosts";
 
 function App() {
   return (
@@ -19,11 +18,11 @@ function App() {
         </div>
         <div className="col text-center">
           <h2>Async Thunk Posts</h2>
-          <FetchedThunkPosts />
+          <FetchedPosts type="Thunk" />
         </div>
         <div className="col text-center">
           <h2>Async Saga Posts</h2>
-          <FetchedSagaPosts />
+          <FetchedPosts type="Saga" />
         </div>
       </div>
     </div>

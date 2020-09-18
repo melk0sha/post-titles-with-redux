@@ -1,6 +1,8 @@
-import { takeEvery, put, call } from "redux-saga/effects";
-import { FETCH_POSTS, REQUEST_POSTS } from "../constants";
-import { hideLoader, showAlert, showLoader } from "../actions";
+import { takeEvery, put, call, delay } from "redux-saga/effects";
+import { FETCH_SAGA_POSTS, REQUEST_POSTS } from "../constants";
+import { hideSagaLoader, showAlert, showSagaLoader } from "../actions";
+
+const fakeDataUrl = "https://jsonplaceholder.typicode.com/posts?_limit=4";
 
 export function* sagaWatcher() {
   yield takeEvery(REQUEST_POSTS, sagaWorker);
@@ -8,19 +10,18 @@ export function* sagaWatcher() {
 
 function* sagaWorker() {
   try {
-    yield put(showLoader());
+    yield put(showSagaLoader());
     const payload = yield call(fetchPosts);
-    yield put({ type: FETCH_POSTS, payload });
-    yield put(hideLoader());
+    yield delay(500);
+    yield put({ type: FETCH_SAGA_POSTS, payload });
+    yield put(hideSagaLoader());
   } catch (e) {
     yield put(showAlert("Something went wrong"));
-    yield put(hideLoader());
+    yield put(hideSagaLoader());
   }
 }
 
 async function fetchPosts() {
-  const response = await fetch(
-    "https://jsonplaceholder.typicode.com/posts?_limit=5"
-  );
+  const response = await fetch(fakeDataUrl);
   return await response.json();
 }

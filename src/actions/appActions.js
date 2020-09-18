@@ -1,14 +1,33 @@
-import { SHOW_LOADER, HIDE_LOADER, SHOW_ALERT, HIDE_ALERT } from "../constants";
+import {
+  SHOW_THUNK_LOADER,
+  SHOW_SAGA_LOADER,
+  HIDE_THUNK_LOADER,
+  HIDE_SAGA_LOADER,
+  SHOW_ALERT,
+  HIDE_ALERT,
+} from "../constants";
 
-export function showLoader() {
+export function showThunkLoader() {
   return {
-    type: SHOW_LOADER,
+    type: SHOW_THUNK_LOADER,
   };
 }
 
-export function hideLoader() {
+export function showSagaLoader() {
   return {
-    type: HIDE_LOADER,
+    type: SHOW_SAGA_LOADER,
+  };
+}
+
+export function hideThunkLoader() {
+  return {
+    type: HIDE_THUNK_LOADER,
+  };
+}
+
+export function hideSagaLoader() {
+  return {
+    type: HIDE_SAGA_LOADER,
   };
 }
 
