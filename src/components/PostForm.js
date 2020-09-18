@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { createPost, showAlert } from "../actions";
-import { Alert } from "./Alert";
+import Alert from "./Alert";
 
 /**
  * Using connect function from 'react-redux' with class component to work with Redux

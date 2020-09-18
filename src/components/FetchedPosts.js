@@ -1,7 +1,7 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchThunkPosts, fetchSagaPosts } from "../actions";
-import { Loader } from "./Loader";
+import Loader from "./Loader";
 import Post from "./Post";
 
 /**
