@@ -1,5 +1,5 @@
 import { takeEvery, put, call } from "redux-saga/effects";
-import { FETCH_POSTS, REQUEST_POSTS } from "../constants/actions";
+import { FETCH_POSTS, REQUEST_POSTS } from "../constants";
 import { hideLoader, showAlert, showLoader } from "../actions";
 
 export function* sagaWatcher() {

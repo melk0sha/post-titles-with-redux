@@ -1,0 +1,1 @@
+export { forbiddenWordsMiddleware } from "./forbiddenWordsMiddleware";
